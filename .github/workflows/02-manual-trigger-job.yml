@@ -16,5 +16,6 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Run the job
-      run: az ml job create --file ./src/job.yml --resource-group cloud-shell-storage-centralindia --workspace-name dev
+      run: bash az ml job create --file job.yml --resource-group cloud-shell-storage-centralindia --workspace-name dev
+      working-directory: src
       
